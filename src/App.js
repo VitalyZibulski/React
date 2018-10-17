@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import Car from './Car/Car'
 
 class App extends Component {
     render() {
@@ -10,7 +11,7 @@ class App extends Component {
         return (
             <div style={divStyle}>
               <h1 style={{color:'blue',fontSize:'20px'}}>Hello world!</h1>
-                {/*'font-size':'20px' or fontSize:'20px'*/}
+                <Car />
             </div>
         );
     }
