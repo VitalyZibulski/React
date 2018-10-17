@@ -20,7 +20,9 @@ class App extends Component {
     }
 
     handleInput = (event) => {
-        console.log('changed', event.target.value)
+        this.setState({
+            pageTitle:event.target.value
+        })
     }
 
     render() {
