@@ -1,7 +1,8 @@
 import React from 'react'
+import Radium from 'radium'
 import './Car.css'
 
-export default props => {
+const Car = props => {
     const inputClasses = ['input']
 
     if(props.name !== '') {
@@ -15,8 +16,13 @@ export default props => {
     }
 
     const style = {
-        border:'1px solid #ccc',
-        boxShadow:'0 4px 5px 0 rgba(0,0,0,.14)'
+        border: '1px solid #ccc',
+        boxShadow: '0 4px 5px 0 rgba(0,0,0,.14)',
+        ':hover': {
+            border: '2px solid #aaa',
+            boxShadow:'0 4px 15px 0m rgba(0,0,0,.25)'
+
+        }
     }
 
     return (
@@ -34,3 +40,5 @@ export default props => {
         </div>
     )
 }
+
+export default Radium(Car)
