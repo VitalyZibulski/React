@@ -23,7 +23,8 @@ import React from 'react'
 
 export default () => (
     <div>
-        This is car component
-        <strong>test</strong>
+        <p>This is car component</p>
+        <p><strong>{1 + 1}</strong></p>
+        <p><strong>{Math.random()}</strong></p>
     </div>
 )
