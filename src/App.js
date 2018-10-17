@@ -20,9 +20,15 @@ class App extends Component {
         })
     }
 
-    changeTitleHandler = pageTitle => {
-        this.setState({pageTitle})
+    onChangeName(name, index){
+        console.log(name,index)
+        const car  = this.state.cars[index]
+        car.name = name;
+        const cars = [...this.state.cars]
+        cars[index] = car
+        this.setState({cars})
     }
+
 
     render() {
         const divStyle = {
@@ -38,7 +44,7 @@ class App extends Component {
                         key={index}
                         name={car.name}
                         year={car.year}
-                        onChangeTitle={() => this.changeTitleHandler(car.name)}
+                        onChangeName={event => this.onChangeName(event.target.value,index)}
                     />
                 )
             })

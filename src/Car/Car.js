@@ -1,11 +1,14 @@
 import React from 'react'
 
 export default props => (
-    <div>
+    <div style={{
+        border:'1px solid #ccc',
+        marginBottom:'10px'
+    }}>
         <p>This is car component</p>
         <p>Car name:<strong>{props.name}</strong></p>
         <p>Year:<strong>{props.year}</strong></p>
-        { props.children }
-        <button onClick={props.onChangeTitle}>Click</button>
+        <input type="text" onChange={props.onChangeName}/>
+        {/*<button onClick={props.onChangeTitle}>Click</button>*/}
     </div>
 )
