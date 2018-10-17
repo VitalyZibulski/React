@@ -12,8 +12,9 @@ class App extends Component {
             <div style={divStyle}>
               <h1 style={{color:'blue',fontSize:'20px'}}>Hello world!</h1>
                 <Car name={'Ford'} year={2018}/>
-                <Car name="Audi" year={2016}/>
-
+                <Car name="Audi" year={2016}>
+                    <p style={{color:'red'}}>COLOR</p>
+                </Car>
             </div>
         );
     }
