@@ -3,7 +3,27 @@ import Radium from 'radium'
 import classes from './Car.css'
 
 class Car extends React.Component {
+
+    componentWillReceiveProps(nextProps){
+        console.log('App componentWillReceiveProps')
+    }
+
+    shouldComponentUpdate(nextProps, nextState) {
+        console.log('App shouldComponentUpdate')
+
+        return nextProps.name.trim() !== this.props.name.trim()
+    }
+
+    componentWillUpdate(nextProps,nextState){
+        console.log('App componentWillUpdate')
+    }
+
+    componentDidUpdate() {
+        console.log('App componentDidUpdate')
+    }
+
     render(){
+        console.log('render')
         const inputClasses = [classes.input]
 
         if(this.props.name !== '') {
@@ -43,4 +63,4 @@ class Car extends React.Component {
     }
 }
 
-export default Radium(Car)
+export default Car
