@@ -4,9 +4,16 @@ import PropTypes from 'prop-types'
 import withClass from '../hoc/withClass'
 
 class Car extends React.Component {
+
+    constructor(props) {
+        super(props)
+
+        this.inputRef = React.createRef()
+    }
+
     componentDidMount() {
         if(this.props.index === 0) {
-            this.inputRef.focus()
+            this.inputRef.current.focus()
         }
     }
 
@@ -30,7 +37,7 @@ class Car extends React.Component {
                 <p>Car name:<strong>{this.props.name}</strong></p>
                 <p>Year:<strong>{this.props.year}</strong></p>
                 <input
-                    ref={(inputRef) => this.inputRef = inputRef }
+                    ref={this.inputRef}
                     type="text"
                     onChange={this.props.onChangeName}
                     value={this.props.name}
