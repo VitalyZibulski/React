@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Car from './Car/Car'
+import ErrorBoundary from './ErrorBoundary/ErrorBoundary';
 
 
 class App extends Component {
@@ -11,8 +12,8 @@ class App extends Component {
         this.state = {
             cars: [
                 {name:'Ford', year:2018},
-                // {name:'Audi', year:2018},
-                // {name:'Mazda', year:2018},
+                {name:'Audi', year:2018},
+                {name:'Mazda', year:2018},
             ],
             pageTitle:'React components',
             showCars:false
@@ -60,13 +61,14 @@ class App extends Component {
         if(this.state.showCars) {
             cars = this.state.cars.map((car,index) => {
                 return (
+                    <ErrorBoundary key={index}>
                     <Car
-                        key={index}
                         name={car.name}
                         year={car.year}
                         onDelete={this.deleteHandler.bind(this,index)}
                         onChangeName={event => this.onChangeName(event.target.value,index)}
                     />
+                    </ErrorBoundary>
                 )
             })
         }

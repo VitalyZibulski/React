@@ -22,15 +22,15 @@ class Car extends React.Component {
         console.log('App componentDidUpdate')
     }
 
-    getSnapshotBeforeUpdate() {
-        console.log('App getSnapshopBeforeUpdate')
-    }
+    // getSnapshotBeforeUpdate() {
+    //     console.log('App getSnapshopBeforeUpdate')
+    // }
 
-    static getDerivedStateFromProps(nextProps,prevState) {
-        console.log('App getDerivedStateFromProps', nextProps, prevState)
-
-        return prevState
-    }
+    // static getDerivedStateFromProps(nextProps,prevState) {
+    //     console.log('App getDerivedStateFromProps', nextProps, prevState)
+    //
+    //     return prevState
+    // }
 
     componentWillUnmount(){
         console.log('App componentWillUnmount')
@@ -38,6 +38,10 @@ class Car extends React.Component {
 
     render(){
         console.log('render')
+
+        if(Math.random() > 0.7) {
+            throw new Error('Car random failed');
+        }
         const inputClasses = [classes.input]
 
         if(this.props.name !== '') {
