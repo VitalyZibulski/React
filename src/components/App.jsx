@@ -1,12 +1,11 @@
 import { restaurants } from "../data/data.js";
-import { RestaurantCard } from "./restaurant/RestaurantCard/RestaurantCard.jsx";
+import { Tabs } from './tabs/Tabs';
+import { Layout } from './layout/Layout.jsx';
 
 export const App = () => {
     return (
-        <div>
-            {restaurants.map((restaurant) => (
-                <RestaurantCard key={restaurant.id} restaurant={restaurant}/>
-            ))}
-        </div>
+        <Layout>
+            <Tabs items={restaurants} />
+        </Layout>
     );
 };
