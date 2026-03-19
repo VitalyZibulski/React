@@ -1,0 +1,15 @@
+.tabButton {
+    padding: 10px 20px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #c4b2b2;
+    transition: all 0.3s;
+    border-bottom: 2px solid transparent;
+}
+
+.tabButton.active {
+    color: #007bff;
+    border-bottom: 2px solid #007bff;
+}

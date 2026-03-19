@@ -1,12 +1,12 @@
-.tabs-container {
+.tabsContainer {
     margin: 20px auto;
 }
 
-.tabs-header {
+.tabsHeader {
     display: flex;
 }
 
-.tab-button {
+.tabButton {
     padding: 10px 20px;
     border: none;
     background: none;
@@ -17,11 +17,11 @@
     border-bottom: 2px solid transparent;
 }
 
-.tab-button.active {
+.tabButton.active {
     color: #007bff;
     border-bottom: 2px solid #007bff;
 }
 
-.tabs-content {
+.tabsContent {
     padding: 10px;
 }

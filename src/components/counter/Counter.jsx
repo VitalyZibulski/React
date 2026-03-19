@@ -1,15 +1,12 @@
 import React from "react";
-import { useCounter } from "../hooks/useCounter.js";
-import './counter.css';
+import styles from './Counter.module.css';
 
-export const Counter = () => {
-    const { value, decrement, increment } = useCounter();
-
+export const Counter = ({ value, decrement, increment }) => {
     return (
-        <div className="counter-wrapper">
-            <button onClick={decrement}>-</button>
+        <div className={styles.counterAligner}>
+            <button type="button" onClick={decrement}>-</button>
             <div>{value}</div>
-            <button onClick={increment}>+</button>
+            <button type="button" onClick={increment}>+</button>
         </div>
     );
 };
