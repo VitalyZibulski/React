@@ -1,13 +1,19 @@
 import { restaurants } from "../data/data.js";
 import { Tabs } from './tabs/Tabs';
 import { Layout } from './layout/Layout.jsx';
-import { ProgressBar } from './ProgressBar/ProgressBar'
+import { ThemeProvider } from "../providers/theme-provider.jsx";
+import { UserProvider } from "../providers/user-provider.jsx";
 
 export const App = () => {
     return (
-        <Layout>
-            <ProgressBar />
-            <Tabs items={restaurants} />
+        <>
+            <ThemeProvider>
+                <UserProvider>
+                    <Layout>
+                        <Tabs items={restaurants} />
+                    </Layout>
+                </UserProvider>
+            </ThemeProvider>
             <div>
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
@@ -138,6 +144,6 @@ export const App = () => {
                     sit amet et lectus.
                 </p>
             </div>
-        </Layout>
+        </>
     );
 };
