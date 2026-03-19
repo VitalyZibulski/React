@@ -1,4 +1,4 @@
-import { Counter } from "../../counter/Counter.jsx";
+import { DishCounter } from "../../counter/DishCounter.jsx";
 
 export const MenuList = ({ menu }) => {
     if (!menu || menu.length === 0) {
@@ -10,7 +10,7 @@ export const MenuList = ({ menu }) => {
             {menu.map((item) => (
                 <li key={item.id}>
                     {item.name}
-                    <Counter />
+                    <DishCounter />
                 </li>
             ))}
         </ul>

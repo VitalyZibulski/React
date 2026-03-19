@@ -1,7 +1,6 @@
-import React from "react";
-import styles from './Counter.module.css';
+import styles from './ReviewCounter.module.css';
 
-export const Counter = ({ value, decrement, increment }) => {
+export const ReviewCounter = ({ value, decrement, increment }) => {
     return (
         <div className={styles.counterAligner}>
             <button type="button" onClick={decrement}>-</button>

@@ -1,5 +1,5 @@
 import { useReducer } from 'react';
-import { Counter } from '../counter/Counter';
+import { ReviewCounter } from './ReviewCounter/ReviewCounter';
 import styles from './ReviewForm.module.css';
 import { formReducer } from './reducers/formReducer';
 import { INITIAL_FORM } from './reducers/formReducer';
@@ -40,7 +40,7 @@ export const ReviewForm = () => {
       />
       <p>Assesed from 1 to 5</p>
 
-      <Counter
+      <ReviewCounter
         value={mark}
         increment={() => {
           dispatch({ type: SET_MARK_ACTION, payload: 'increment' });
