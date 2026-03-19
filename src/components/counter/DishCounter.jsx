@@ -1,12 +1,12 @@
 import React from "react";
 import { useCounter } from "../hooks/useCounter.js";
-import './counter.css';
+import styles from './DishCounter.module.css';
 
-export const Counter = () => {
+export const DishCounter = () => {
     const { value, decrement, increment } = useCounter();
 
     return (
-        <div className="counter-wrapper">
+        <div className={styles.counterAligner}>
             <button onClick={decrement}>-</button>
             <div>{value}</div>
             <button onClick={increment}>+</button>

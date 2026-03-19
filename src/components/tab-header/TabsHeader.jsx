@@ -1,11 +1,14 @@
+import styles from './TabsHeader.module.css';
+import cn from 'classnames';
+
 export const TabsHeader = ({ items, activeTabId, changeTab }) => {
     return (
-        <div className="tabs-header">
+        <div>
             {items.map((tab) => (
                 <button
                     key={tab.id}
                     onClick={() => changeTab(tab.id)}
-                    className={`tab-button ${activeTabId === tab.id ? 'active' : ''}`}
+                    className={cn(styles.tabButton, { [styles.active]: activeTabId === tab.id })}
                 >
                     {tab.name}
                 </button>

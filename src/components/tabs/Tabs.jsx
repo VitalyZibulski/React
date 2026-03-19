@@ -1,8 +1,9 @@
 import { useState } from 'react';
-import './tabs.css';
+import styles from './Tabs.module.css';
 import { MenuList } from "../menu/MenuList/MenuList.jsx";
 import { ReviewsList } from "../review/ReviewList/ReviewList.jsx";
 import {TabsHeader} from "../tab-header/TabsHeader.jsx";
+import { RestaurantCard } from '../restaurant/RestaurantCard/RestaurantCard';
 
 export const Tabs = ({ items }) => {
     const [activeTabId, setActiveTabId] = useState(items[0].id);
@@ -22,21 +23,15 @@ export const Tabs = ({ items }) => {
     const activeItem = items.find((item) => item.id === activeTabId);
 
     return (
-        <div className="tabs-container">
+        <div className={styles.tabsContainer}>
             <TabsHeader
                 items={items}
                 activeTabId={activeTabId}
                 changeTab={changeTab}
             />
 
-            <div className="tabs-content">
-                <div className="content-inner">
-                    <h3>Menu:</h3>
-                    <MenuList menu={activeItem.menu}/>
-
-                    <h3>Reviews:</h3>
-                    <ReviewsList reviews={activeItem.reviews}/>
-                </div>
+            <div className={styles.tabsContent}>
+                <RestaurantCard restaurant={activeItem} />
             </div>
         </div>
     );
